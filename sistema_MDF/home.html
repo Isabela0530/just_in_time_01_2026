@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Início | Just in Time MDF</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="logo-header">
+            <span>JIT</span>
+        </div>
+
+        <div class="titulo-header">
+            <h1>Just in Time MDF</h1>
+            <p>Sistema de gerenciamento de produção</p>
+        </div>
+
+        <button id="btnSair" class="btn-sair">
+            Sair
+        </button>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="boas-vindas">
+
+            <h2>Bem-vindo(a)!</h2>
+
+            <p>
+                Olá, <strong id="nomeUsuario">Usuário</strong>.
+            </p>
+
+            <p>
+                Selecione uma das opções abaixo para continuar.
+            </p>
+
+        </section>
+
+
+        <section class="menu">
+
+            <a href="produtos.html" class="menu-card">
+
+                <div class="icone">
+                    📦
+                </div>
+
+                <h3>Produtos</h3>
+
+                <p>
+                    Cadastre, consulte, edite e exclua produtos.
+                </p>
+
+            </a>
+
+
+            <a href="producao.html" class="menu-card">
+
+                <div class="icone">
+                    🏭
+                </div>
+
+                <h3>Produção</h3>
+
+                <p>
+                    Gerencie a produção e os pedidos realizados.
+                </p>
+
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Sistema Just in Time MDF
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+        if (!usuario) {
+            window.location.href = "index.html";
+        } else {
+
+            document.getElementById("nomeUsuario").textContent =
+                usuario.nome;
+        }
+
+        document.getElementById("btnSair").addEventListener("click", () => {
+
+            localStorage.removeItem("usuario");
+
+            window.location.href = "index.html";
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+

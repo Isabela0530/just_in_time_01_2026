@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produtos | Just in Time MDF</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <div class="logo-header">
+            <span>JIT</span>
+        </div>
+
+        <div class="titulo-header">
+            <h1>Produtos</h1>
+            <p>Cadastro e controle de produtos</p>
+        </div>
+
+        <button class="btn-sair" onclick="sair()">
+            Sair
+        </button>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="pagina-topo">
+
+            <div>
+                <h2>Cadastro de Produtos</h2>
+
+                <p>
+                    Cadastre e gerencie os produtos da empresa.
+                </p>
+            </div>
+
+            <a href="home.html" class="btn-voltar">
+                ← Voltar
+            </a>
+
+        </div>
+
+        <section class="form-card">
+
+            <h3 id="tituloFormulario">
+                Novo Produto
+            </h3>
+
+            <form id="produtoForm">
+
+                <input type="hidden" id="produtoId">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label for="nome">
+                            Nome do produto
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Digite o nome"
+                            required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="custo">
+                            Custo (R$)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="custo"
+                            placeholder="0,00"
+                            step="0.01"
+                            min="0"
+                            required>
+                    </div>
+
+
+                    <div class="input-group campo-grande">
+
+                        <label for="descricao">
+                            Descrição
+                        </label>
+
+                        <textarea
+                            id="descricao"
+                            placeholder="Digite a descrição do produto"
+                            required>
+                        </textarea>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="quantidadeEstoque">
+                            Quantidade em estoque
+                        </label>
+
+                        <input
+                            type="number"
+                            id="quantidadeEstoque"
+                            placeholder="0"
+                            min="0"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="estoqueMinimo">
+                            Estoque mínimo
+                        </label>
+
+                        <input
+                            type="number"
+                            id="estoqueMinimo"
+                            placeholder="0"
+                            min="0"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-botoes">
+
+                    <button type="submit" class="btn-principal">
+                        Salvar Produto
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnCancelar"
+                        class="btn-cancelar"
+                        style="display: none;">
+                        Cancelar
+                    </button>
+
+                </div>
+
+                <p id="mensagemProduto" class="mensagem"></p>
+
+            </form>
+
+        </section>
+
+        <section class="lista-card">
+
+            <div class="lista-topo">
+
+                <h3>Produtos cadastrados</h3>
+
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="🔎 Pesquisar produto...">
+
+            </div>
+
+
+            <div class="tabela-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Produto</th>
+                            <th>Descrição</th>
+                            <th>Custo</th>
+                            <th>Estoque</th>
+                            <th>Mínimo</th>
+                            <th>Ações</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="listaProdutos">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Sistema Just in Time MDF
+        </p>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+    <script src="../js/produtos.js"></script>
+
+</body>
+
+</html>
+
